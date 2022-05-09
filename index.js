@@ -8,8 +8,8 @@ const options = {
     cert: fs.readFileSync(path.join(__dirname, '.', 'ssl', 'cert.pem'), 'utf-8')
 }
 
-const server = require('https').createServer(options, app);
-
+// const server = require('https').createServer(options, app);
+const server = require('http').createServer( app);
 const io = require('socket.io')(server, {
     rejectUnauthorized: false,
     cors: {
